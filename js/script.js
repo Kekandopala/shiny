@@ -1,3 +1,10 @@
+window.onload = function() {
+	if(window.location.hash) {
+	   elmnt = document.getElementById(window.location.hash.substring(1));
+           elmnt.scrollIntoView(true);
+	}
+};
+
 const swiper = new Swiper('.partners-slider', {
    speed: 400,
    spaceBetween: 100,
