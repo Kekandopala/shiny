@@ -1,10 +1,3 @@
-window.onload = function() {
-	if(window.location.hash) {
-	   elmnt = document.getElementById(window.location.hash.substring(1));
-           elmnt.scrollIntoView(true);
-	}
-};
-
 const swiper = new Swiper('.partners-slider', {
    speed: 400,
    spaceBetween: 100,
@@ -14,6 +7,19 @@ const swiper = new Swiper('.partners-slider', {
     },
     slidesPerView: 1,
  });
+
+
+$(document).ready(function () {
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && isChrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    });
+
 
   // Меню бургер
 $(document).ready(function(){
